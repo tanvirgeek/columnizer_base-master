@@ -1,0 +1,500 @@
+/************************************************************************
+// For extensive details about creating a Populr theme, please visit
+// http://developers.populr.me/theming
+*/
+
+
+// Use this statement to import Google Web Fonts
+@import '//fonts.googleapis.com/css?family=Kreon:400,300,700';
+
+// Use @base-url when specifying relative paths to images, fonts, 
+// and other resources.
+@base-url: '..';
+
+// @background-color holds the default background color for 
+// your pop. You can specify it here, but Populr will override 
+// this value once the user selects a background image for their 
+// pop. Populr automatically calculates the average color of any 
+// background image selected by the user, and stores that average 
+// color in @background-color.
+@background-color: #ccc;
+
+
+/************************************************************************
+// The following values can be edited by Populr's users via dropdown 
+// menus in the pop editor.
+*/
+
+// @headline-font-family is changed with the Font dropdown 
+@headline-font-family:'Kreon',Georgia, serif;
+
+// @custom-color is changed with the custome color picker in the Color 
+// dropdown. The color picker will only be available to your users if 
+// you set it up as one of your color palettes. See the Populr themer 
+// documentation for details on how this works:
+// http://developers.populr.me/theming/
+@custom-color: #33f;
+
+
+/************************************************************************
+// @populr-theme version
+//
+// When @populr-theme-version is set to 0, the theme rendering engine
+// will use Populr's legacy grid. This is a fast way to get started, 
+// since the legacy grid provides good general-purpose settings. If you 
+// would like to define your own grid, set @populr-theme-version to 1.
+//
+// The value of @populr-theme-version impacts two other things: icons and
+// buttons, both of which can be added to text areas by the end user.
+// If @populr-theme-version is 0, Populr will automatically include 
+// mixins that will style icons and buttons attractively, based off the
+// @custom-color variable.
+// If @populr-theme-version is 1, you will have to manually add 
+// the corresponding mixins to use our styling, or you can style these
+// elements yourself.
+*/
+
+// 0 = Populr legacy grid, and use Populr's default icon & button styling
+// 1 = Define your own grid, style icons & buttons yourself
+@populr-theme-version: 1;
+
+// To use your own grid, edit the following properties as needed.
+.columnizer-row-inner {
+  margin: 0 auto;
+  max-width: 960px;
+}
+.columnizer-col .asset {
+	float: left;
+        .columnizer-cols1 & { width: 900px;}
+	.columnizer-cols2 & { width: 420px;}
+	.columnizer-cols3 & { width: 266px;
+		
+	}
+	&:first-child { margin-left: 0; }
+	&:last-child { margin-right: 0; }
+}
+.columnizer-cols3{
+        .columnizer-col:nth-of-type(1) .asset{
+            width:195px!important;
+        } 
+        .columnizer-col:nth-of-type(2) .asset{
+            width:390px!important;
+        }
+        .columnizer-col:nth-of-type(3) .asset{
+            width:195px!important;
+        }
+}
+.columnizer-cols3{
+        .columnizer-col:nth-of-type(1) .asset.asset-type-imagegroup,.columnizer-col:nth-of-type(1) .asset.asset-type-documentgroup{
+            width:255px!important;
+        } 
+        .columnizer-col:nth-of-type(2) .asset.asset-type-imagegroup,.columnizer-col:nth-of-type(2) .asset.asset-type-documentgroup{
+            width:450px!important;
+        }
+        .columnizer-col:nth-of-type(3) .asset.asset-type-imagegroup,.columnizer-col:nth-of-type(3) .asset.asset-type-documentgroup{
+            width:255px!important;
+        }
+}
+.columnizer-cols2{
+        .columnizer-col .asset.asset-type-imagegroup,.columnizer-col .asset.asset-type-documentgroup{
+            width:480px!important;
+        }
+}
+.columnizer-cols1{
+        .columnizer-col .asset.asset-type-imagegroup,.columnizer-col .asset.asset-type-documentgroup{
+            width:960px!important;
+        }
+}
+//All BGs
+
+@mybgcolor1:#371640;
+@mybgcolor2:#513361;
+@mybgcolor3:#532d5e;
+@mybgcolor4:#6a4c73;
+@mybgcolor5:#835693;
+
+.my-text-shadow(@text-shadow:#371640) {
+  text-shadow: .1em .2em .1em @text-shadow!important;
+}
+@value1: 10%;
+@value2: 15%;
+
+.custom-link-button(@link-bg-color:blue;@link-border-color:black){
+    
+    a{
+        color: darken(@link-bg-color,40%)!important;
+        text-decoration: none!important;
+        &:hover{
+            color: darken(@link-bg-color,20%)!important;
+        }
+    }
+    .link-btn{
+        color: white!important;
+        background: @link-bg-color!important;
+        border-bottom: 2px solid @link-border-color;
+        &:hover{
+            background: lighten(@link-bg-color,5%)!important;
+            color: white!important;
+        }
+    }
+}
+
+.jquery-tricky-bg{
+        background-color:@mybgcolor5!important;
+        
+}
+
+//cols1 bgs
+.columnizer-cols1{//default cols1 bgs
+    .columnizer-col{
+        background-color:@mybgcolor2;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor2,25%));
+        }
+        .custom-link-button(darken(@mybgcolor2,@value1),darken(@mybgcolor2,@value2));
+    } 
+}
+.columnizer-row-contents-text{
+    .columnizer-col{
+        background-color:@mybgcolor2;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor2,25%));
+        }
+        .custom-link-button(darken(@mybgcolor2,@value1),darken(@mybgcolor2,@value2));
+    } 
+    
+}
+
+.columnizer-row-contents-embedgroup{
+    .columnizer-col{
+        background-color:@mybgcolor2;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor2,25%));
+        }
+        .custom-link-button(darken(@mybgcolor2,@value1),darken(@mybgcolor2,@value2));
+    } 
+}
+
+
+
+//cols2 bgs
+.columnizer-cols2{//default cols2 bgs
+    
+    .columnizer-col:nth-of-type(1){
+        background-color: @mybgcolor3;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor3,25%));
+        }
+        .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+    }
+    .columnizer-col:nth-of-type(2){
+        background-color: @mybgcolor5;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor5,25%));
+        }
+        .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+    }
+    
+}
+.columnizer-row-contents-text-text{
+    
+    .columnizer-col:nth-of-type(1){
+        background-color: @mybgcolor3;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor3,25%));
+        }
+        .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+    }
+    .columnizer-col:nth-of-type(2){
+        background-color: @mybgcolor5;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor5,25%));
+        }
+        .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+    }
+    
+}
+
+.columnizer-row-contents-text-embedgroup{
+    
+    .columnizer-col:nth-of-type(1){
+        background-color: @mybgcolor5;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor5,25%));
+        }
+        .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+    }
+    .columnizer-col:nth-of-type(2){
+        background-color: @mybgcolor4;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor4,25%));
+        }
+        .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+    }
+    
+}
+
+.columnizer-row-contents-embedgroup-text{
+    
+    .columnizer-col:nth-of-type(1){
+        background-color: @mybgcolor3;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor3,25%));
+        }
+        .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+    }
+    .columnizer-col:nth-of-type(2){
+        background-color: @mybgcolor5;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor5,25%));
+        }
+        .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+    }
+    
+}
+
+.columnizer-row-contents-embedgroup-embedgroup{
+    
+    .columnizer-col:nth-of-type(1){
+        background-color: @mybgcolor4;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor4,25%));
+        }
+        .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+    }
+    .columnizer-col:nth-of-type(2){
+        background-color: @mybgcolor3;
+        .asset-title{
+            .my-text-shadow(darken(@mybgcolor3,25%));
+        }
+        .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+    }
+    
+}
+
+//cols3 bgs
+.columnizer-cols3{//Default cols3 bg
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor2;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor2,25%));
+            }
+            .custom-link-button(darken(@mybgcolor2,@value1),darken(@mybgcolor3,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor5 ;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor5,25%));
+            }
+            .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor2;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor2,25%));
+            }
+            .custom-link-button(darken(@mybgcolor2,@value1),darken(@mybgcolor2,@value2));
+        }
+}
+
+.columnizer-row-contents-text-text-text{
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor5;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor5,25%));
+            }
+            .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor3 ;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor3,25%));
+            }
+            .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor5 ;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor5,25%));
+            }
+            .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+        }
+}
+
+.columnizer-row-contents-text-embedgroup-embedgroup{
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor4;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor3;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor3,25%));
+            }
+            .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor4 ;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        }
+}
+
+.columnizer-row-contents-text-text-embedgroup{
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor5;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor5,25%));
+            }
+            .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor3 ;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor3,25%));
+            }
+            .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor5;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor5,25%));
+            }
+            .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+        }
+}
+
+.columnizer-row-contents-embedgroup-text-text{
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor4;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor5 ;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor5,25%));
+            }
+            .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor4;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        }
+}
+
+.columnizer-row-contents-embedgroup-text-embedgroup{
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor3;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor3,25%));
+            }
+            .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor4;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor3;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor3,25%));
+            }
+            .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+        }
+}
+
+.columnizer-row-contents-embedgroup-embedgroup-text{
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor4;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor3 ;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor3,25%));
+            }
+            .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor4;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        }
+}
+.columnizer-row-contents-embedgroup-text-embedgroup{
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor5;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor5,25%));
+            }
+            .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor4;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor3;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor3,25%));
+            }
+            .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+        }
+}
+
+.columnizer-row-contents-embedgroup-embedgroup-embedgroup{
+        .columnizer-col:nth-of-type(1){
+            background-color: @mybgcolor3;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor3,25%));
+            }
+            .custom-link-button(darken(@mybgcolor3,@value1),darken(@mybgcolor3,@value2));
+        } 
+        .columnizer-col:nth-of-type(2){
+            background-color:@mybgcolor4 ;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor4,25%));
+            }
+            .custom-link-button(darken(@mybgcolor4,@value1),darken(@mybgcolor4,@value2));
+        }
+        .columnizer-col:nth-of-type(3){
+            background-color: @mybgcolor5;
+            .asset-title{
+                .my-text-shadow(darken(@mybgcolor5,25%));
+            }
+            .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+        }
+}
+.asset-type-documentgroup .asset-inner .document-title-description-parent{
+    .custom-link-button(darken(@mybgcolor5,@value1),darken(@mybgcolor5,@value2));
+}
+
+// clearfix for columnizer rows
+.columnizer-row:after { display: block; visibility: hidden; height: 0; clear: both; content: ' '; }
+.columnizer-row { *zoom: 1; }
+
+// If you've set @populr-theme-version to 1, we recommend using these mixins.
+#populr > .link-button(@custom-color);
+#populr > .icon(@custom-color);
