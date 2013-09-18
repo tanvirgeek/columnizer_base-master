@@ -108,11 +108,21 @@
 //All BGs
 
 @mybgcolor1:@custom-bg-color;
-@mybgcolor2:#513361;
-@mybgcolor3:#532d5e;
-@mybgcolor4:#6a4c73;
-@mybgcolor5:#835693;
 
+
+.mixin (@custom-bg-color) when (@custom-bg-color = #371640) {
+    @mybgcolor2:#513361;
+    @mybgcolor3:#532d5e;
+    @mybgcolor4:#6a4c73;
+    @mybgcolor5:#835693;
+}
+.mixin (@custom-bg-color) when not (@custom-bg-color = #371640) {
+    @mybgcolor2:lighten(@custom-bg-color,5%);
+    @mybgcolor3:lighten(@custom-bg-color,9%);
+    @mybgcolor4:lighten(@custom-bg-color,12%);
+    @mybgcolor5:lighten(@custom-bg-color,15%);
+}
+.mixin(@mybgcolor1);
 
 .my-text-shadow(@text-shadow:#371640) {
   text-shadow: .1em .2em .1em @text-shadow!important;
