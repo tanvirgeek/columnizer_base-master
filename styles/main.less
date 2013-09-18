@@ -23,7 +23,7 @@
 @text-color: white;
 // @custom-color is defined in variables.less
 @link-color: @custom-color;
-
+#populr > .inline-logo-title();
 // Title text defaults
 // @headline-font-family is defined in variables.less
 .headline-text() {
@@ -107,15 +107,7 @@
    padding-bottom: 100000px;
    margin-bottom:  -100000px;
 }
-.populr-image-slider .slideshow{
-    width:100%!important;
-    .slide{
-        width:100%!important;
-        img{
-            width:100%!important;
-        }
-    }
-}
+
 // Assets
 .asset-title {
   .headline-text();
@@ -144,6 +136,18 @@
 
 // Image asset styling
 #populr > #image-slider-themes > .basic();
+.columnizer-cols3{
+        .columnizer-col:nth-of-type(1) .asset.asset-type-imagegroup,.columnizer-col:nth-of-type(3) .asset.asset-type-imagegroup{
+            .big{
+                display: none;
+            }
+        } 
+        .columnizer-col:nth-of-type(2) .asset.asset-type-imagegroup{
+           .small{
+                display: none;
+            }
+        }
+}
 .asset-type-imagegroup {
     .asset-inner{
         height: 300px;

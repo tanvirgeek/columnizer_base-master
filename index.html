@@ -23,9 +23,9 @@
     Style values: fill, tile, fixed
     Average color can be computed by opening an image in Photoshop and shrinking it down to 1 pixel
   -->
-  <!--
-    <meta itemprop="defaultBackground" content="/images/background.jpg" data-width="1800" data-height="1800" data-position="c" data-style="fill" data-color="#665b42">
-  -->
+  
+  <meta itemprop="defaultBackground" content="/images/background.jpg" data-width="1800" data-height="1800" data-position="c" data-style="fill" data-color="#665b42">
+  
 
   <!--
     Theme styles
@@ -72,7 +72,7 @@
       {{/asset}}
 
       {{#asset "imagegroup" size="1"}}
-        {{{imageslider images width="920" height="300"}}}
+        {{{imageslider images width="960" height="300"  crop-single=true cropping-enabled=false}}}
         <div class="imageHover">
             {{{title}}}
             {{{description}}}
@@ -81,7 +81,7 @@
  
       {{#asset "imagegroup" size="2"}}
         
-        {{{imageslider images width="430" height="300"}}}
+        {{{imageslider images width="480" height="300"  crop-single=true cropping-enabled=false}}}
         <div class="imageHover">
             {{{title}}}
             {{{description}}}
@@ -89,8 +89,12 @@
       {{/asset}}
   
       {{#asset "imagegroup" size="3"}}
-        
-        {{{imageslider images width="266" height="300"}}}
+        <div class="small">
+            {{{imageslider images width="255" height="300"  crop-single=true cropping-enabled=false}}}
+        </div>
+        <div class="big">
+            {{{imageslider images width="450" height="300  crop-single=true cropping-enabled=false"}}}
+        </div>
         <div class="imageHover">
             {{{title}}}
             {{{description}}}
